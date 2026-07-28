@@ -303,8 +303,14 @@ Kênh nộp, quy tắc đặt tên và deadline cuối theo thông báo của gi
 
 ## Checkpoints — K3 buổi sáng (09:00–13:00)
 
-- 10:00 — Run baseline + build UI.
-- 10:30 — Improve prompt/tools for v1 + build at least 1 tool.
-- 11:00 — Write team eval cases + improve v2.
-- 11:30 — Team showdown.
-- 12:30 — Improve v3 + hoàn thiện report Phần B.
+0. **Kickoff — 09:00–09:15:** chia nhóm, phân vai và mở `starter_v0/`.
+1. **Setup — 09:15–09:40:** chuẩn bị môi trường, API keys và chạy provider preflight.
+2. **Baseline v0 — 09:40–10:15:** chạy base eval, đọc một failed trace, dựng UI local và ghi bốn metric.
+3. **v1 + Tool — 10:15–10:50:** sửa một giả thuyết, hoàn thiện một tool mới, chạy v1 và cập nhật version log.
+4. **Nghỉ — 10:50–11:05.**
+5. **Eval + v2 — 11:05–11:30:** hoàn thành 10 team eval cases, evidence v2, ba kịch bản demo, Report A và rehearsal.
+6. **Demo → Ship — 11:30–12:40:**
+   - **Showdown — 11:30–12:15:** giới thiệu, live test và challenge.
+   - **v3 + Report B — 12:15–12:35:** áp dụng feedback, chạy v3 và hoàn thiện report bằng evidence.
+   - **Final gate — 12:35–12:40:** kiểm tra và chuẩn bị nộp `starter_v0/`.
+7. **Kahoot Recap — 12:40–13:00.**
