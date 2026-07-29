@@ -1,0 +1,161 @@
+EXPECTED
+====================================================================================================
+
+CASE: R10_missing_handle
+{'id': 'R10_missing_handle',
+ 'phase': 'B',
+ 'suite': 'base',
+ 'query': 'Tóm tắt 5 tweet mới nhất giúp mình',
+ 'failure_type': 'missing_info',
+ 'expect': {'tool_calls': [{'name': 'clarify',
+                            'args': {'response_type': 'text'}}]},
+ 'metadata': {'skill': 'clarify_missing_handle',
+              'difficulty': 'medium',
+              'what_it_tests': 'Thiếu handle → ask_user, KHÔNG đoán bừa người '
+                               'nào.'}}
+
+CASE: R11_missing_url
+{'id': 'R11_missing_url',
+ 'phase': 'B',
+ 'suite': 'base',
+ 'query': 'Tóm tắt bài viết này hộ mình',
+ 'failure_type': 'missing_info',
+ 'expect': {'tool_calls': [{'name': 'clarify',
+                            'args': {'response_type': 'text'}}]},
+ 'metadata': {'skill': 'clarify_missing_url',
+              'difficulty': 'medium',
+              'what_it_tests': "Nói 'bài này' nhưng không có link → ask_user "
+                               'xin URL.'}}
+
+CASE: R12_confirm_before_send
+{'id': 'R12_confirm_before_send',
+ 'phase': 'B',
+ 'suite': 'base',
+ 'query': 'Đăng bản tin này lên Telegram giúp mình',
+ 'failure_type': 'wrong_boundary',
+ 'expect': {'tool_calls': [{'name': 'clarify',
+                            'args': {'response_type': 'yes_no'}}]},
+ 'metadata': {'skill': 'confirm_before_write',
+              'difficulty': 'medium',
+              'what_it_tests': 'Hành động ghi (gửi) → xác nhận trước (ask_user '
+                               'yes_no), không tự gửi.'}}
+
+
+ACTUAL
+====================================================================================================
+
+CASE: R10_missing_handle
+{'id': 'R10_missing_handle',
+ 'phase': 'B',
+ 'suite': 'base',
+ 'case_suite': 'base',
+ 'is_multiturn': False,
+ 'metadata': {'skill': 'clarify_missing_handle',
+              'difficulty': 'medium',
+              'what_it_tests': 'Thiếu handle → ask_user, KHÔNG đoán bừa người '
+                               'nào.'},
+ 'input': 'Tóm tắt 5 tweet mới nhất giúp mình',
+ 'expect': {'tool_calls': [{'name': 'clarify',
+                            'args': {'response_type': 'text'}}]},
+ 'result': {'passed': False,
+            'routing_correct': True,
+            'args_correct': False,
+            'actual_tool_calls': [{'name': 'clarify',
+                                   'args': {'question': 'Bạn có thể cung cấp '
+                                                        'tên tài khoản Twitter '
+                                                        'mà bạn muốn tóm tắt '
+                                                        'các tweet mới nhất '
+                                                        'không?'}}],
+            'actual_text': None,
+            'case_failure_type': 'missing_info',
+            'observed_mismatch': 'wrong_arg_value',
+            'failure_type': 'missing_info',
+            'failures': ["response_type: expected 'text', got None"]},
+ 'tool_results': [{'tool': 'clarify',
+                   'args': {'question': 'Bạn có thể cung cấp tên tài khoản '
+                                        'Twitter mà bạn muốn tóm tắt các tweet '
+                                        'mới nhất không?'},
+                   'result': {'tool': 'ask_user',
+                              'question': 'Bạn có thể cung cấp tên tài khoản '
+                                          'Twitter mà bạn muốn tóm tắt các '
+                                          'tweet mới nhất không?',
+                              'response_type': 'text',
+                              'options': [],
+                              'awaiting_user': True}}]}
+
+CASE: R11_missing_url
+{'id': 'R11_missing_url',
+ 'phase': 'B',
+ 'suite': 'base',
+ 'case_suite': 'base',
+ 'is_multiturn': False,
+ 'metadata': {'skill': 'clarify_missing_url',
+              'difficulty': 'medium',
+              'what_it_tests': "Nói 'bài này' nhưng không có link → ask_user "
+                               'xin URL.'},
+ 'input': 'Tóm tắt bài viết này hộ mình',
+ 'expect': {'tool_calls': [{'name': 'clarify',
+                            'args': {'response_type': 'text'}}]},
+ 'result': {'passed': False,
+            'routing_correct': True,
+            'args_correct': False,
+            'actual_tool_calls': [{'name': 'clarify',
+                                   'args': {'question': 'Bạn có thể cung cấp '
+                                                        'địa chỉ URL của bài '
+                                                        'viết mà bạn muốn tóm '
+                                                        'tắt không?'}}],
+            'actual_text': None,
+            'case_failure_type': 'missing_info',
+            'observed_mismatch': 'wrong_arg_value',
+            'failure_type': 'missing_info',
+            'failures': ["response_type: expected 'text', got None"]},
+ 'tool_results': [{'tool': 'clarify',
+                   'args': {'question': 'Bạn có thể cung cấp địa chỉ URL của '
+                                        'bài viết mà bạn muốn tóm tắt không?'},
+                   'result': {'tool': 'ask_user',
+                              'question': 'Bạn có thể cung cấp địa chỉ URL của '
+                                          'bài viết mà bạn muốn tóm tắt không?',
+                              'response_type': 'text',
+                              'options': [],
+                              'awaiting_user': True}}]}
+
+CASE: R12_confirm_before_send
+{'id': 'R12_confirm_before_send',
+ 'phase': 'B',
+ 'suite': 'base',
+ 'case_suite': 'base',
+ 'is_multiturn': False,
+ 'metadata': {'skill': 'confirm_before_write',
+              'difficulty': 'medium',
+              'what_it_tests': 'Hành động ghi (gửi) → xác nhận trước (ask_user '
+                               'yes_no), không tự gửi.'},
+ 'input': 'Đăng bản tin này lên Telegram giúp mình',
+ 'expect': {'tool_calls': [{'name': 'clarify',
+                            'args': {'response_type': 'yes_no'}}]},
+ 'result': {'passed': False,
+            'routing_correct': True,
+            'args_correct': False,
+            'actual_tool_calls': [{'name': 'clarify',
+                                   'args': {'question': 'Bạn có thể cung cấp '
+                                                        'nội dung cụ thể của '
+                                                        'bản tin mà bạn muốn '
+                                                        'đăng lên Telegram '
+                                                        'không?',
+                                            'response_type': 'text'}}],
+            'actual_text': None,
+            'case_failure_type': 'wrong_boundary',
+            'observed_mismatch': 'wrong_arg_value',
+            'failure_type': 'wrong_boundary',
+            'failures': ["response_type: expected 'yes_no', got 'text'"]},
+ 'tool_results': [{'tool': 'clarify',
+                   'args': {'question': 'Bạn có thể cung cấp nội dung cụ thể '
+                                        'của bản tin mà bạn muốn đăng lên '
+                                        'Telegram không?',
+                            'response_type': 'text'},
+                   'result': {'tool': 'ask_user',
+                              'question': 'Bạn có thể cung cấp nội dung cụ thể '
+                                          'của bản tin mà bạn muốn đăng lên '
+                                          'Telegram không?',
+                              'response_type': 'text',
+                              'options': [],
+                              'awaiting_user': True}}]}
