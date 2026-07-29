@@ -1,0 +1,429 @@
+{
+  "transcript_id": "v0_openai_20260729T114612642128",
+  "version": "v2",
+  "artifact_version": "v2+pb5328af57aba+t14018d85432a",
+  "prompt_hash": "b5328af57abaf9b9497ce4be903868d9365854e46f896179e644d5e58090129d",
+  "tools_hash": "14018d85432aa63c8ad03d9f70fa95d84b9311c73e1c702de7bfd22c7058e852",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "system_prompt": "D:\\GIT\\Day04-G01-E403\\starter_v0\\artifacts\\versions\\v2\\system_prompt.md",
+  "tools": "D:\\GIT\\Day04-G01-E403\\starter_v0\\artifacts\\versions\\v2\\tools.yaml",
+  "history_window": 5,
+  "max_tool_rounds": 4,
+  "created_at": "2026-07-29T11:55:45",
+  "updated_at": "2026-07-29T11:55:45",
+  "turns": [
+    {
+      "turn_index": 1,
+      "user_text": "giúp tôi học giải tích 1",
+      "status": "answered",
+      "assistant_text": "Here are some resources to help you learn Calculus 1:\n\n### Research Papers\n1. **[Fractional Calculus: Some Basic Problems in Continuum and Statistical Mechanics](http://arxiv.org/abs/1201.0863v1)**  \n   Author: Francesco Mainardi  \n   Summary: This paper reviews applications of fractional calculus in continuum mechanics and statistical mechanics.  \n   [PDF Link](https://arxiv.org/pdf/1201.0863v1)\n\n2. **[A symbol calculus for foliations](http://arxiv.org/abs/1511.05697v2)**  \n   Authors: Moulay Tahar Benameur, L. James Heitsch  \n   Summary: This paper extends the classical Getzler rescaling theorem to the transverse geometry of foliations.  \n   [PDF Link](https://arxiv.org/pdf/1511.05697v2)\n\n3. **[Experimentation in the Schubert Calculus](http://arxiv.org/abs/1308.3284v1)**  \n   Authors: Abraham Martin del Campo, Frank Sottile  \n   Summary: This paper discusses modeling aspects of Schubert calculus on a computer for large-scale experimentation.  \n   [PDF Link](https://arxiv.org/pdf/1308.3284v1)\n\n4. **[Numerical Approximations to Fractional Problems of the Calculus of Variations and Optimal Control](http://arxiv.org/abs/1310.5377v2)**  \n   Authors: Shakoor Pooseh, Ricardo Almeida, Delfim F. M. Torres  \n   Summary: This chapter presents numerical methods for solving fractional calculus problems.  \n   [PDF Link](https://arxiv.org/pdf/1310.5377v2)\n\n5. **[Weyl Calculus on Graded Groups](http://arxiv.org/abs/2306.04275v2)**  \n   Authors: Serena Federico, David Rottensteiner, Michael Ruzhansky  \n   Summary: This paper establishes a pseudo-differential Weyl calculus on graded nilpotent Lie groups.  \n   [PDF Link](https://arxiv.org/pdf/2306.04275v2)\n\n### Study Guides and Resources\n- **[Professor V on Instagram](https://www.instagram.com/reel/DbKDNdXJ2fc)**: Offers a free Calculus 1 guide with worked examples and essential formulas.\n- **[Math with Professor V](https://www.instagram.com/mathwithprofessorv/reel/DbN-wTep4kf)**: Provides complete courses in calculus with video lessons and practice problems.\n- **[I Teach Calculus on TikTok](https://www.tiktok.com/discover/i-teach-calculus)**: Features guided notes, practice problems, and study guides for better understanding of calculus.\n\nThese resources should provide a solid foundation for your studies in Calculus 1.",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "papers",
+              "args": {
+                "query": "Calculus 1",
+                "max_results": 5
+              }
+            },
+            {
+              "name": "lookup",
+              "args": {
+                "query": "Calculus 1 study guide",
+                "topic": "general",
+                "max_results": 5
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "papers",
+              "args": {
+                "query": "Calculus 1",
+                "max_results": 5
+              },
+              "result": {
+                "tool": "arxiv_search",
+                "query": "Calculus 1",
+                "api_query": "all:Calculus",
+                "total_results": 14844,
+                "items": [
+                  {
+                    "arxiv_id": "1201.0863v1",
+                    "title": "Fractional Calculus: Some Basic Problems in Continuum and Statistical Mechanics",
+                    "summary": "We review some applications of fractional calculus developed by the author (partly in collaboration with others) to treat some basic problems in continuum and statistical mechanics. The problems in continuum mechanics concern mathematical modelling of viscoelastic bodies (Sect. 1), and unsteady motion of a particle in a viscous fluid, i.e. the Basset problem (Sect. 2). In the former analysis fractional calculus leads us to introduce intermediate models of viscoelasticity which generalize the classical spring-dashpot models. The latter analysis induces us to introduce a hydrodynamic model suitable to revisit in Sect. 3 the classical theory of the Brownian motion, which is a relevant topic in statistical mechanics. By the tools of fractional calculus we explain the long tails in the velocity correlation and in the displacement variance. In Sect. 4 we consider the fractional diffusion-wave equation, which is obtained from the classical diffusion equation by replacing the first-order time derivative by a fractional derivative of order $0< β<2$. Led by our analysis we express the fundamental solutions (the Green functions) in terms of two interrelated auxiliary functions in the similarity variable, which turn out to be of Wright type (see Appendix), and to distinguish slow-diffusion processes ($0 < β< 1$) from intermediate processes ($1 < β< 2$).",
+                    "authors": [
+                      "Francesco Mainardi"
+                    ],
+                    "published": "2012-01-04T10:06:47Z",
+                    "updated": "2012-01-04T10:06:47Z",
+                    "url": "http://arxiv.org/abs/1201.0863v1",
+                    "pdf_url": "https://arxiv.org/pdf/1201.0863v1",
+                    "source": "arxiv.org",
+                    "primary_category": "cond-mat.stat-mech",
+                    "categories": [
+                      "cond-mat.stat-mech",
+                      "math-ph"
+                    ]
+                  },
+                  {
+                    "arxiv_id": "1511.05697v2",
+                    "title": "A symbol calculus for foliations",
+                    "summary": "The classical Getzler rescaling theorem is extended to the transverse geometry of foliations. More precisely, a Getzler rescaling calculus, as well as a Block-Fox calculus of asymptotic operators, is constructed for all transversely spin foliations. This calculus applies to operators of degree $m$ globally times degree $\\ell$ in the leaf directions, and is thus an appropriate tool for a better understanding of the index theory of transversely elliptic operators on foliations. The main result is that the composition of A$Ψ$DOs is again an A$Ψ$DO, and includes a formula for the leading symbol.",
+                    "authors": [
+                      "Moulay Tahar Benameur",
+                      "L. James Heitsch"
+                    ],
+                    "published": "2015-11-18T08:50:18Z",
+                    "updated": "2016-07-27T15:24:39Z",
+                    "url": "http://arxiv.org/abs/1511.05697v2",
+                    "pdf_url": "https://arxiv.org/pdf/1511.05697v2",
+                    "source": "arxiv.org",
+                    "primary_category": "math.GT",
+                    "categories": [
+                      "math.GT",
+                      "math.DG"
+                    ]
+                  },
+                  {
+                    "arxiv_id": "1308.3284v1",
+                    "title": "Experimentation in the Schubert Calculus",
+                    "summary": "Many aspects of Schubert calculus are easily modeled on a computer. This enables large-scale experimentation to investigate subtle and ill-understood phenomena in the Schubert calculus. A well-known web of conjectures and results in the real Schubert calculus has been inspired by this continuing experimentation. A similarly rich story concerning intrinsic structure, or Galois groups, of Schubert problems is also beginning to emerge from experimentation. This showcases new possibilities for the use of computers in mathematical research.",
+                    "authors": [
+                      "Abraham Martin del Campo",
+                      "Frank Sottile"
+                    ],
+                    "published": "2013-08-15T01:50:50Z",
+                    "updated": "2013-08-15T01:50:50Z",
+                    "url": "http://arxiv.org/abs/1308.3284v1",
+                    "pdf_url": "https://arxiv.org/pdf/1308.3284v1",
+                    "source": "arxiv.org",
+                    "primary_category": "math.AG",
+                    "categories": [
+                      "math.AG"
+                    ]
+                  },
+                  {
+                    "arxiv_id": "1310.5377v2",
+                    "title": "Numerical Approximations to Fractional Problems of the Calculus of Variations and Optimal Control",
+                    "summary": "This chapter presents some numerical methods to solve problems in the fractional calculus of variations and fractional optimal control. Although there are plenty of methods available in the literature, we concentrate mainly on approximating the fractional problem either by discretizing the fractional term or expanding the fractional derivatives as a series involving integer order derivatives. The former method, as a subclass of direct methods in the theory of calculus of variations, uses finite differences, Grunwald-Letnikov definition in this case, to discretize the fractional term. Any quadrature rule for integration, regarding the desired accuracy, is then used to discretize the whole problem including constraints. The final task in this method is to solve a static optimization problem to reach approximated values of the unknown functions on some mesh points. The latter method, however, approximates fractional problems by classical ones in which only derivatives of integer order are present. Precisely, two continuous approximations for fractional derivatives by series involving ordinary derivatives are introduced. Local upper bounds for truncation errors are provided and, through some test functions, the accuracy of the approximations are justified. Then we substitute the fractional term in the original problem with these series and transform the fractional problem to an ordinary one. Hereafter, we use indirect methods of classical theory, e.g. Euler-Lagrange equations, to solve the approximated problem. The methods are mainly developed through some concrete examples which either have obvious solutions or the solution is computed using the fractional Euler-Lagrange equation.",
+                    "authors": [
+                      "Shakoor Pooseh",
+                      "Ricardo Almeida",
+                      "Delfim F. M. Torres"
+                    ],
+                    "published": "2013-10-20T21:55:29Z",
+                    "updated": "2013-11-01T01:26:25Z",
+                    "url": "http://arxiv.org/abs/1310.5377v2",
+                    "pdf_url": "https://arxiv.org/pdf/1310.5377v2",
+                    "source": "arxiv.org",
+                    "primary_category": "math.OC",
+                    "categories": [
+                      "math.OC",
+                      "math.NA"
+                    ]
+                  },
+                  {
+                    "arxiv_id": "2306.04275v2",
+                    "title": "Weyl Calculus on Graded Groups",
+                    "summary": "The aim of this paper is to establish a pseudo-differential Weyl calculus on graded nilpotent Lie groups $G$ which extends the celebrated Weyl calculus on $\\mathbb{R}^n$. To reach this goal, we develop a symbolic calculus for a very general class of quantization schemes, following [Doc. Math., 22, 1539--1592, 2017], using the Hörmander symbol classes $S^m_{ρ, δ}(G)$ introduced in [Progress in Mathematics, 314. Birkhäuser/Springer, 2016]. We particularly focus on the so-called symmetric calculi, for which quantizing and taking the adjoint commute, among them the Euclidean Weyl calculus, but we also recover the (non-symmetric) Kohn-Nirenberg calculus, on $\\mathbb{R}^n$ and on general graded groups [Progress in Mathematics, 314. Birkhäuser/Springer, 2016]. Several interesting applications follow directly from our calculus: expected mapping properties on Sobolev spaces, the existence of one-sided parametrices and the Gårding inequality for elliptic operators, and a generalization of the Poisson bracket for symmetric quantizations on stratified groups. In the particular case of the Heisenberg group $\\mathbb{H}_n$, we are able to answer the fundamental questions of this paper: which, among all the admissible quantizations, is the natural Weyl quantization on $\\mathbb{H}_n$? And which are the criteria that determine it uniquely? The surprisingly simple but compelling answers raise the question whether what is true for $\\mathbb{R}^n$ and $\\mathbb{H}_n$ also extends to general graded groups, which we answer in the affirmative in this paper. Among other things, we discuss and investigate an analogue of the symplectic invariance property of the Weyl quantization in the setting of graded groups, as well as the notion of the Poisson bracket for symbols in the setting of stratified groups, linking it to the symbolic properties of the commutators.",
+                    "authors": [
+                      "Serena Federico",
+                      "David Rottensteiner",
+                      "Michael Ruzhansky"
+                    ],
+                    "published": "2023-06-07T09:21:45Z",
+                    "updated": "2026-03-12T16:16:48Z",
+                    "url": "http://arxiv.org/abs/2306.04275v2",
+                    "pdf_url": "https://arxiv.org/pdf/2306.04275v2",
+                    "source": "arxiv.org",
+                    "primary_category": "math.AP",
+                    "categories": [
+                      "math.AP",
+                      "math.CA"
+                    ]
+                  }
+                ],
+                "rate_limit_note": "arXiv may return 429 if called too frequently; this tool waits at least 3 seconds between requests in-process."
+              }
+            },
+            {
+              "tool": "lookup",
+              "args": {
+                "query": "Calculus 1 study guide",
+                "topic": "general",
+                "max_results": 5
+              },
+              "result": {
+                "tool": "web_search",
+                "query": "Calculus 1 study guide",
+                "topic": "general",
+                "timeframe": "week",
+                "items": [
+                  {
+                    "title": "Professor V 👩‍🏫 on Instagram: \"It's so fun grading my ...",
+                    "url": "https://www.instagram.com/reel/DbKDNdXJ2fc",
+                    "source": "instagram.com",
+                    "summary": "CALC and I'll send you my free Calculus 1 Guide with worked examples, essential formulas, common mistakes, and the exact study framework that helped thousands",
+                    "score": 0.72465646
+                  },
+                  {
+                    "title": "mathwithprofessorv",
+                    "url": "https://www.instagram.com/mathwithprofessorv/reel/DbN-wTep4kf",
+                    "source": "instagram.com",
+                    "summary": "With complete courses in calculus one, There are hundreds of video lessons, guided notes, practice problems with fully worked solutions, study guides, sample",
+                    "score": 0.7092009
+                  },
+                  {
+                    "title": "Calculus 2 After High School Calc 1 : r/fsu",
+                    "url": "https://www.reddit.com/r/fsu/comments/1v5x4gr/calculus_2_after_high_school_calc_1",
+                    "source": "reddit.com",
+                    "summary": "calc 1 professor gave study guides that were nearly identical to the exams, allowed formula sheet on exams, and allowed re-takes on homework assignments.",
+                    "score": 0.65861565
+                  },
+                  {
+                    "title": "I Teach Calculus",
+                    "url": "https://www.tiktok.com/discover/i-teach-calculus",
+                    "source": "tiktok.com",
+                    "summary": "Discover Professor V's online calculus course with guided notes, practice problems, study guides, and sample exams to help students truly understand math.",
+                    "score": 0.47431523
+                  },
+                  {
+                    "title": "This has been a dream of mine for a very long time. Every ...",
+                    "url": "https://www.tiktok.com/@mathwithprofessorv/video/7666467102491938078",
+                    "source": "tiktok.com",
+                    "summary": "And if you're just getting started, my Calculus 1 course, Calculus 2 course, and Calculus 1 & 2 Bundle are already available as well. xoxo, Professor V",
+                    "score": 0.24471977
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "assistant_text": "Here are some resources to help you learn Calculus 1:\n\n### Research Papers\n1. **[Fractional Calculus: Some Basic Problems in Continuum and Statistical Mechanics](http://arxiv.org/abs/1201.0863v1)**  \n   Author: Francesco Mainardi  \n   Summary: This paper reviews applications of fractional calculus in continuum mechanics and statistical mechanics.  \n   [PDF Link](https://arxiv.org/pdf/1201.0863v1)\n\n2. **[A symbol calculus for foliations](http://arxiv.org/abs/1511.05697v2)**  \n   Authors: Moulay Tahar Benameur, L. James Heitsch  \n   Summary: This paper extends the classical Getzler rescaling theorem to the transverse geometry of foliations.  \n   [PDF Link](https://arxiv.org/pdf/1511.05697v2)\n\n3. **[Experimentation in the Schubert Calculus](http://arxiv.org/abs/1308.3284v1)**  \n   Authors: Abraham Martin del Campo, Frank Sottile  \n   Summary: This paper discusses modeling aspects of Schubert calculus on a computer for large-scale experimentation.  \n   [PDF Link](https://arxiv.org/pdf/1308.3284v1)\n\n4. **[Numerical Approximations to Fractional Problems of the Calculus of Variations and Optimal Control](http://arxiv.org/abs/1310.5377v2)**  \n   Authors: Shakoor Pooseh, Ricardo Almeida, Delfim F. M. Torres  \n   Summary: This chapter presents numerical methods for solving fractional calculus problems.  \n   [PDF Link](https://arxiv.org/pdf/1310.5377v2)\n\n5. **[Weyl Calculus on Graded Groups](http://arxiv.org/abs/2306.04275v2)**  \n   Authors: Serena Federico, David Rottensteiner, Michael Ruzhansky  \n   Summary: This paper establishes a pseudo-differential Weyl calculus on graded nilpotent Lie groups.  \n   [PDF Link](https://arxiv.org/pdf/2306.04275v2)\n\n### Study Guides and Resources\n- **[Professor V on Instagram](https://www.instagram.com/reel/DbKDNdXJ2fc)**: Offers a free Calculus 1 guide with worked examples and essential formulas.\n- **[Math with Professor V](https://www.instagram.com/mathwithprofessorv/reel/DbN-wTep4kf)**: Provides complete courses in calculus with video lessons and practice problems.\n- **[I Teach Calculus on TikTok](https://www.tiktok.com/discover/i-teach-calculus)**: Features guided notes, practice problems, and study guides for better understanding of calculus.\n\nThese resources should provide a solid foundation for your studies in Calculus 1.",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "papers",
+          "args": {
+            "query": "Calculus 1",
+            "max_results": 5
+          },
+          "result": {
+            "tool": "arxiv_search",
+            "query": "Calculus 1",
+            "api_query": "all:Calculus",
+            "total_results": 14844,
+            "items": [
+              {
+                "arxiv_id": "1201.0863v1",
+                "title": "Fractional Calculus: Some Basic Problems in Continuum and Statistical Mechanics",
+                "summary": "We review some applications of fractional calculus developed by the author (partly in collaboration with others) to treat some basic problems in continuum and statistical mechanics. The problems in continuum mechanics concern mathematical modelling of viscoelastic bodies (Sect. 1), and unsteady motion of a particle in a viscous fluid, i.e. the Basset problem (Sect. 2). In the former analysis fractional calculus leads us to introduce intermediate models of viscoelasticity which generalize the classical spring-dashpot models. The latter analysis induces us to introduce a hydrodynamic model suitable to revisit in Sect. 3 the classical theory of the Brownian motion, which is a relevant topic in statistical mechanics. By the tools of fractional calculus we explain the long tails in the velocity correlation and in the displacement variance. In Sect. 4 we consider the fractional diffusion-wave equation, which is obtained from the classical diffusion equation by replacing the first-order time derivative by a fractional derivative of order $0< β<2$. Led by our analysis we express the fundamental solutions (the Green functions) in terms of two interrelated auxiliary functions in the similarity variable, which turn out to be of Wright type (see Appendix), and to distinguish slow-diffusion processes ($0 < β< 1$) from intermediate processes ($1 < β< 2$).",
+                "authors": [
+                  "Francesco Mainardi"
+                ],
+                "published": "2012-01-04T10:06:47Z",
+                "updated": "2012-01-04T10:06:47Z",
+                "url": "http://arxiv.org/abs/1201.0863v1",
+                "pdf_url": "https://arxiv.org/pdf/1201.0863v1",
+                "source": "arxiv.org",
+                "primary_category": "cond-mat.stat-mech",
+                "categories": [
+                  "cond-mat.stat-mech",
+                  "math-ph"
+                ]
+              },
+              {
+                "arxiv_id": "1511.05697v2",
+                "title": "A symbol calculus for foliations",
+                "summary": "The classical Getzler rescaling theorem is extended to the transverse geometry of foliations. More precisely, a Getzler rescaling calculus, as well as a Block-Fox calculus of asymptotic operators, is constructed for all transversely spin foliations. This calculus applies to operators of degree $m$ globally times degree $\\ell$ in the leaf directions, and is thus an appropriate tool for a better understanding of the index theory of transversely elliptic operators on foliations. The main result is that the composition of A$Ψ$DOs is again an A$Ψ$DO, and includes a formula for the leading symbol.",
+                "authors": [
+                  "Moulay Tahar Benameur",
+                  "L. James Heitsch"
+                ],
+                "published": "2015-11-18T08:50:18Z",
+                "updated": "2016-07-27T15:24:39Z",
+                "url": "http://arxiv.org/abs/1511.05697v2",
+                "pdf_url": "https://arxiv.org/pdf/1511.05697v2",
+                "source": "arxiv.org",
+                "primary_category": "math.GT",
+                "categories": [
+                  "math.GT",
+                  "math.DG"
+                ]
+              },
+              {
+                "arxiv_id": "1308.3284v1",
+                "title": "Experimentation in the Schubert Calculus",
+                "summary": "Many aspects of Schubert calculus are easily modeled on a computer. This enables large-scale experimentation to investigate subtle and ill-understood phenomena in the Schubert calculus. A well-known web of conjectures and results in the real Schubert calculus has been inspired by this continuing experimentation. A similarly rich story concerning intrinsic structure, or Galois groups, of Schubert problems is also beginning to emerge from experimentation. This showcases new possibilities for the use of computers in mathematical research.",
+                "authors": [
+                  "Abraham Martin del Campo",
+                  "Frank Sottile"
+                ],
+                "published": "2013-08-15T01:50:50Z",
+                "updated": "2013-08-15T01:50:50Z",
+                "url": "http://arxiv.org/abs/1308.3284v1",
+                "pdf_url": "https://arxiv.org/pdf/1308.3284v1",
+                "source": "arxiv.org",
+                "primary_category": "math.AG",
+                "categories": [
+                  "math.AG"
+                ]
+              },
+              {
+                "arxiv_id": "1310.5377v2",
+                "title": "Numerical Approximations to Fractional Problems of the Calculus of Variations and Optimal Control",
+                "summary": "This chapter presents some numerical methods to solve problems in the fractional calculus of variations and fractional optimal control. Although there are plenty of methods available in the literature, we concentrate mainly on approximating the fractional problem either by discretizing the fractional term or expanding the fractional derivatives as a series involving integer order derivatives. The former method, as a subclass of direct methods in the theory of calculus of variations, uses finite differences, Grunwald-Letnikov definition in this case, to discretize the fractional term. Any quadrature rule for integration, regarding the desired accuracy, is then used to discretize the whole problem including constraints. The final task in this method is to solve a static optimization problem to reach approximated values of the unknown functions on some mesh points. The latter method, however, approximates fractional problems by classical ones in which only derivatives of integer order are present. Precisely, two continuous approximations for fractional derivatives by series involving ordinary derivatives are introduced. Local upper bounds for truncation errors are provided and, through some test functions, the accuracy of the approximations are justified. Then we substitute the fractional term in the original problem with these series and transform the fractional problem to an ordinary one. Hereafter, we use indirect methods of classical theory, e.g. Euler-Lagrange equations, to solve the approximated problem. The methods are mainly developed through some concrete examples which either have obvious solutions or the solution is computed using the fractional Euler-Lagrange equation.",
+                "authors": [
+                  "Shakoor Pooseh",
+                  "Ricardo Almeida",
+                  "Delfim F. M. Torres"
+                ],
+                "published": "2013-10-20T21:55:29Z",
+                "updated": "2013-11-01T01:26:25Z",
+                "url": "http://arxiv.org/abs/1310.5377v2",
+                "pdf_url": "https://arxiv.org/pdf/1310.5377v2",
+                "source": "arxiv.org",
+                "primary_category": "math.OC",
+                "categories": [
+                  "math.OC",
+                  "math.NA"
+                ]
+              },
+              {
+                "arxiv_id": "2306.04275v2",
+                "title": "Weyl Calculus on Graded Groups",
+                "summary": "The aim of this paper is to establish a pseudo-differential Weyl calculus on graded nilpotent Lie groups $G$ which extends the celebrated Weyl calculus on $\\mathbb{R}^n$. To reach this goal, we develop a symbolic calculus for a very general class of quantization schemes, following [Doc. Math., 22, 1539--1592, 2017], using the Hörmander symbol classes $S^m_{ρ, δ}(G)$ introduced in [Progress in Mathematics, 314. Birkhäuser/Springer, 2016]. We particularly focus on the so-called symmetric calculi, for which quantizing and taking the adjoint commute, among them the Euclidean Weyl calculus, but we also recover the (non-symmetric) Kohn-Nirenberg calculus, on $\\mathbb{R}^n$ and on general graded groups [Progress in Mathematics, 314. Birkhäuser/Springer, 2016]. Several interesting applications follow directly from our calculus: expected mapping properties on Sobolev spaces, the existence of one-sided parametrices and the Gårding inequality for elliptic operators, and a generalization of the Poisson bracket for symmetric quantizations on stratified groups. In the particular case of the Heisenberg group $\\mathbb{H}_n$, we are able to answer the fundamental questions of this paper: which, among all the admissible quantizations, is the natural Weyl quantization on $\\mathbb{H}_n$? And which are the criteria that determine it uniquely? The surprisingly simple but compelling answers raise the question whether what is true for $\\mathbb{R}^n$ and $\\mathbb{H}_n$ also extends to general graded groups, which we answer in the affirmative in this paper. Among other things, we discuss and investigate an analogue of the symplectic invariance property of the Weyl quantization in the setting of graded groups, as well as the notion of the Poisson bracket for symbols in the setting of stratified groups, linking it to the symbolic properties of the commutators.",
+                "authors": [
+                  "Serena Federico",
+                  "David Rottensteiner",
+                  "Michael Ruzhansky"
+                ],
+                "published": "2023-06-07T09:21:45Z",
+                "updated": "2026-03-12T16:16:48Z",
+                "url": "http://arxiv.org/abs/2306.04275v2",
+                "pdf_url": "https://arxiv.org/pdf/2306.04275v2",
+                "source": "arxiv.org",
+                "primary_category": "math.AP",
+                "categories": [
+                  "math.AP",
+                  "math.CA"
+                ]
+              }
+            ],
+            "rate_limit_note": "arXiv may return 429 if called too frequently; this tool waits at least 3 seconds between requests in-process."
+          }
+        },
+        {
+          "tool": "lookup",
+          "args": {
+            "query": "Calculus 1 study guide",
+            "topic": "general",
+            "max_results": 5
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "Calculus 1 study guide",
+            "topic": "general",
+            "timeframe": "week",
+            "items": [
+              {
+                "title": "Professor V 👩‍🏫 on Instagram: \"It's so fun grading my ...",
+                "url": "https://www.instagram.com/reel/DbKDNdXJ2fc",
+                "source": "instagram.com",
+                "summary": "CALC and I'll send you my free Calculus 1 Guide with worked examples, essential formulas, common mistakes, and the exact study framework that helped thousands",
+                "score": 0.72465646
+              },
+              {
+                "title": "mathwithprofessorv",
+                "url": "https://www.instagram.com/mathwithprofessorv/reel/DbN-wTep4kf",
+                "source": "instagram.com",
+                "summary": "With complete courses in calculus one, There are hundreds of video lessons, guided notes, practice problems with fully worked solutions, study guides, sample",
+                "score": 0.7092009
+              },
+              {
+                "title": "Calculus 2 After High School Calc 1 : r/fsu",
+                "url": "https://www.reddit.com/r/fsu/comments/1v5x4gr/calculus_2_after_high_school_calc_1",
+                "source": "reddit.com",
+                "summary": "calc 1 professor gave study guides that were nearly identical to the exams, allowed formula sheet on exams, and allowed re-takes on homework assignments.",
+                "score": 0.65861565
+              },
+              {
+                "title": "I Teach Calculus",
+                "url": "https://www.tiktok.com/discover/i-teach-calculus",
+                "source": "tiktok.com",
+                "summary": "Discover Professor V's online calculus course with guided notes, practice problems, study guides, and sample exams to help students truly understand math.",
+                "score": 0.47431523
+              },
+              {
+                "title": "This has been a dream of mine for a very long time. Every ...",
+                "url": "https://www.tiktok.com/@mathwithprofessorv/video/7666467102491938078",
+                "source": "tiktok.com",
+                "summary": "And if you're just getting started, my Calculus 1 course, Calculus 2 course, and Calculus 1 & 2 Bundle are already available as well. xoxo, Professor V",
+                "score": 0.24471977
+              }
+            ]
+          }
+        }
+      ],
+      "timestamp": "2026-07-29T11:46:35"
+    },
+    {
+      "turn_index": 2,
+      "user_text": "giúp tôi học môn giải tích 1",
+      "status": "answered",
+      "assistant_text": "Để học môn Giải tích 1, bạn có thể tham khảo các tài liệu và phương pháp học sau:\n\n### Tài liệu học tập\n1. **Sách giáo khoa**: \n   - \"Giải tích 1\" của tác giả Lê Văn Hùng hoặc các sách tương tự từ các tác giả khác. Những cuốn sách này thường cung cấp lý thuyết cơ bản, ví dụ minh họa và bài tập thực hành.\n\n2. **Tài liệu trực tuyến**:\n   - **Khan Academy**: Cung cấp các video bài giảng miễn phí về Giải tích, từ cơ bản đến nâng cao.\n   - **Coursera**: Có nhiều khóa học về Giải tích từ các trường đại học nổi tiếng.\n\n3. **Youtube**: \n   - Tìm kiếm các kênh như \"3Blue1Brown\" hoặc \"Professor Leonard\" để xem các video giải thích về các khái niệm trong Giải tích.\n\n### Phương pháp học\n1. **Nắm vững lý thuyết**: Đọc và hiểu các khái niệm cơ bản như giới hạn, đạo hàm, tích phân, và các định lý liên quan.\n\n2. **Làm bài tập**: Thực hành là rất quan trọng. Hãy làm nhiều bài tập từ sách giáo khoa và các nguồn khác để củng cố kiến thức.\n\n3. **Thảo luận nhóm**: Học cùng bạn bè hoặc tham gia các nhóm học tập để trao đổi và giải quyết các vấn đề khó khăn.\n\n4. **Giải thích lại cho người khác**: Cố gắng giải thích các khái niệm cho người khác, điều này sẽ giúp bạn hiểu sâu hơn về chúng.\n\n5. **Sử dụng phần mềm**: Các phần mềm như GeoGebra có thể giúp bạn hình dung các khái niệm trong Giải tích một cách trực quan hơn.\n\nNếu bạn cần thêm thông tin cụ thể về một chủ đề nào trong Giải tích 1, hãy cho tôi biết!",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": "Để học môn Giải tích 1, bạn có thể tham khảo các tài liệu và phương pháp học sau:\n\n### Tài liệu học tập\n1. **Sách giáo khoa**: \n   - \"Giải tích 1\" của tác giả Lê Văn Hùng hoặc các sách tương tự từ các tác giả khác. Những cuốn sách này thường cung cấp lý thuyết cơ bản, ví dụ minh họa và bài tập thực hành.\n\n2. **Tài liệu trực tuyến**:\n   - **Khan Academy**: Cung cấp các video bài giảng miễn phí về Giải tích, từ cơ bản đến nâng cao.\n   - **Coursera**: Có nhiều khóa học về Giải tích từ các trường đại học nổi tiếng.\n\n3. **Youtube**: \n   - Tìm kiếm các kênh như \"3Blue1Brown\" hoặc \"Professor Leonard\" để xem các video giải thích về các khái niệm trong Giải tích.\n\n### Phương pháp học\n1. **Nắm vững lý thuyết**: Đọc và hiểu các khái niệm cơ bản như giới hạn, đạo hàm, tích phân, và các định lý liên quan.\n\n2. **Làm bài tập**: Thực hành là rất quan trọng. Hãy làm nhiều bài tập từ sách giáo khoa và các nguồn khác để củng cố kiến thức.\n\n3. **Thảo luận nhóm**: Học cùng bạn bè hoặc tham gia các nhóm học tập để trao đổi và giải quyết các vấn đề khó khăn.\n\n4. **Giải thích lại cho người khác**: Cố gắng giải thích các khái niệm cho người khác, điều này sẽ giúp bạn hiểu sâu hơn về chúng.\n\n5. **Sử dụng phần mềm**: Các phần mềm như GeoGebra có thể giúp bạn hình dung các khái niệm trong Giải tích một cách trực quan hơn.\n\nNếu bạn cần thêm thông tin cụ thể về một chủ đề nào trong Giải tích 1, hãy cho tôi biết!",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [],
+      "timestamp": "2026-07-29T11:52:47"
+    },
+    {
+      "turn_index": 3,
+      "user_text": "giúp tôi học môn giải tích 1",
+      "status": "answered",
+      "assistant_text": "Để học môn Giải tích 1 hiệu quả, bạn có thể làm theo các bước sau:\n\n### 1. Nắm Vững Kiến Thức Cơ Bản\n- **Giới hạn (Limits)**: Hiểu khái niệm giới hạn và cách tính giới hạn của một hàm số.\n- **Đạo hàm (Derivatives)**: Nắm vững định nghĩa đạo hàm, quy tắc tính đạo hàm, và ứng dụng của đạo hàm trong việc tìm cực trị.\n- **Tích phân (Integrals)**: Học về tích phân xác định và không xác định, cũng như các phương pháp tính tích phân.\n\n### 2. Tài Liệu Học Tập\n- **Sách Giáo Khoa**: Tìm sách giáo khoa Giải tích 1 phù hợp với chương trình học của bạn. Một số sách phổ biến là:\n  - \"Giải tích 1\" của Lê Văn Hùng.\n  - \"Giải tích\" của Thomas.\n  \n- **Tài Liệu Trực Tuyến**:\n  - **Khan Academy**: Cung cấp video và bài tập về Giải tích.\n  - **Coursera**: Có nhiều khóa học về Giải tích từ các trường đại học.\n\n### 3. Thực Hành Làm Bài Tập\n- Làm nhiều bài tập từ sách giáo khoa và các nguồn khác để củng cố kiến thức.\n- Tìm các bài tập nâng cao để thử thách bản thân.\n\n### 4. Tham Gia Nhóm Học\n- Học cùng bạn bè hoặc tham gia các nhóm học tập để trao đổi và giải quyết các vấn đề khó khăn.\n\n### 5. Sử Dụng Công Cụ Hỗ Trợ\n- **Phần mềm**: Sử dụng các phần mềm như GeoGebra để hình dung các khái niệm trong Giải tích.\n- **Video Giảng Dạy**: Tìm kiếm video trên YouTube để xem các bài giảng về các chủ đề cụ thể.\n\n### 6. Giải Thích Lại Cho Người Khác\n- Cố gắng giải thích các khái niệm cho người khác, điều này sẽ giúp bạn hiểu sâu hơn về chúng.\n\nNếu bạn cần thêm thông tin cụ thể về một chủ đề nào trong Giải tích 1, hãy cho tôi biết!",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": "Để học môn Giải tích 1 hiệu quả, bạn có thể làm theo các bước sau:\n\n### 1. Nắm Vững Kiến Thức Cơ Bản\n- **Giới hạn (Limits)**: Hiểu khái niệm giới hạn và cách tính giới hạn của một hàm số.\n- **Đạo hàm (Derivatives)**: Nắm vững định nghĩa đạo hàm, quy tắc tính đạo hàm, và ứng dụng của đạo hàm trong việc tìm cực trị.\n- **Tích phân (Integrals)**: Học về tích phân xác định và không xác định, cũng như các phương pháp tính tích phân.\n\n### 2. Tài Liệu Học Tập\n- **Sách Giáo Khoa**: Tìm sách giáo khoa Giải tích 1 phù hợp với chương trình học của bạn. Một số sách phổ biến là:\n  - \"Giải tích 1\" của Lê Văn Hùng.\n  - \"Giải tích\" của Thomas.\n  \n- **Tài Liệu Trực Tuyến**:\n  - **Khan Academy**: Cung cấp video và bài tập về Giải tích.\n  - **Coursera**: Có nhiều khóa học về Giải tích từ các trường đại học.\n\n### 3. Thực Hành Làm Bài Tập\n- Làm nhiều bài tập từ sách giáo khoa và các nguồn khác để củng cố kiến thức.\n- Tìm các bài tập nâng cao để thử thách bản thân.\n\n### 4. Tham Gia Nhóm Học\n- Học cùng bạn bè hoặc tham gia các nhóm học tập để trao đổi và giải quyết các vấn đề khó khăn.\n\n### 5. Sử Dụng Công Cụ Hỗ Trợ\n- **Phần mềm**: Sử dụng các phần mềm như GeoGebra để hình dung các khái niệm trong Giải tích.\n- **Video Giảng Dạy**: Tìm kiếm video trên YouTube để xem các bài giảng về các chủ đề cụ thể.\n\n### 6. Giải Thích Lại Cho Người Khác\n- Cố gắng giải thích các khái niệm cho người khác, điều này sẽ giúp bạn hiểu sâu hơn về chúng.\n\nNếu bạn cần thêm thông tin cụ thể về một chủ đề nào trong Giải tích 1, hãy cho tôi biết!",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [],
+      "timestamp": "2026-07-29T11:54:19"
+    },
+    {
+      "turn_index": 4,
+      "user_text": "giải thích về vô cùng lớn, vô cùng bé",
+      "status": "answered",
+      "assistant_text": "Trong toán học, khái niệm \"vô cùng lớn\" và \"vô cùng bé\" thường được sử dụng để mô tả các giá trị không giới hạn trong các ngữ cảnh khác nhau, đặc biệt là trong Giải tích. Dưới đây là giải thích chi tiết về hai khái niệm này:\n\n### 1. Vô Cùng Lớn (Infinity)\n- **Định nghĩa**: Vô cùng lớn (ký hiệu là ∞) không phải là một số cụ thể mà là một khái niệm dùng để chỉ một giá trị lớn hơn bất kỳ số thực nào. Khi nói rằng một hàm số hoặc một dãy số tiến tới vô cùng lớn, điều đó có nghĩa là giá trị của nó không ngừng tăng lên mà không có giới hạn.\n- **Ví dụ**: \n  - Khi x tiến tới vô cùng, hàm số f(x) = x^2 sẽ tiến tới vô cùng lớn.\n  - Trong giới hạn, nếu lim (x → ∞) f(x) = ∞, điều này có nghĩa là khi x càng lớn, giá trị của f(x) cũng càng lớn.\n\n### 2. Vô Cùng Bé (Infinitesimal)\n- **Định nghĩa**: Vô cùng bé là một khái niệm dùng để chỉ các giá trị nhỏ hơn bất kỳ số dương nào nhưng vẫn lớn hơn 0. Trong Giải tích, vô cùng bé thường được sử dụng để mô tả sự thay đổi rất nhỏ trong các hàm số.\n- **Ví dụ**: \n  - Khi xem xét đạo hàm, ta có thể nói rằng sự thay đổi của x (ký hiệu là dx) là một giá trị vô cùng bé. Đạo hàm f'(x) được định nghĩa là giới hạn của tỉ số thay đổi của hàm số khi dx tiến tới 0.\n  - Trong ngữ cảnh của giới hạn, nếu lim (x → 0) f(x) = 0, điều này có thể được hiểu là f(x) trở nên vô cùng bé khi x tiến tới 0.\n\n### 3. Ứng Dụng\n- **Trong Giải Tích**: Các khái niệm này rất quan trọng trong việc xác định giới hạn, đạo hàm và tích phân. Chúng giúp mô tả hành vi của các hàm số trong các tình huống cực trị hoặc khi tiếp cận các giá trị không giới hạn.\n- **Trong Vật Lý**: Vô cùng lớn và vô cùng bé cũng được sử dụng để mô tả các hiện tượng vật lý, chẳng hạn như trong lý thuyết tương đối hoặc trong các mô hình lượng tử.\n\nHy vọng rằng giải thích này giúp bạn hiểu rõ hơn về khái niệm vô cùng lớn và vô cùng bé trong toán học! Nếu bạn có câu hỏi cụ thể nào khác, hãy cho tôi biết!",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": "Trong toán học, khái niệm \"vô cùng lớn\" và \"vô cùng bé\" thường được sử dụng để mô tả các giá trị không giới hạn trong các ngữ cảnh khác nhau, đặc biệt là trong Giải tích. Dưới đây là giải thích chi tiết về hai khái niệm này:\n\n### 1. Vô Cùng Lớn (Infinity)\n- **Định nghĩa**: Vô cùng lớn (ký hiệu là ∞) không phải là một số cụ thể mà là một khái niệm dùng để chỉ một giá trị lớn hơn bất kỳ số thực nào. Khi nói rằng một hàm số hoặc một dãy số tiến tới vô cùng lớn, điều đó có nghĩa là giá trị của nó không ngừng tăng lên mà không có giới hạn.\n- **Ví dụ**: \n  - Khi x tiến tới vô cùng, hàm số f(x) = x^2 sẽ tiến tới vô cùng lớn.\n  - Trong giới hạn, nếu lim (x → ∞) f(x) = ∞, điều này có nghĩa là khi x càng lớn, giá trị của f(x) cũng càng lớn.\n\n### 2. Vô Cùng Bé (Infinitesimal)\n- **Định nghĩa**: Vô cùng bé là một khái niệm dùng để chỉ các giá trị nhỏ hơn bất kỳ số dương nào nhưng vẫn lớn hơn 0. Trong Giải tích, vô cùng bé thường được sử dụng để mô tả sự thay đổi rất nhỏ trong các hàm số.\n- **Ví dụ**: \n  - Khi xem xét đạo hàm, ta có thể nói rằng sự thay đổi của x (ký hiệu là dx) là một giá trị vô cùng bé. Đạo hàm f'(x) được định nghĩa là giới hạn của tỉ số thay đổi của hàm số khi dx tiến tới 0.\n  - Trong ngữ cảnh của giới hạn, nếu lim (x → 0) f(x) = 0, điều này có thể được hiểu là f(x) trở nên vô cùng bé khi x tiến tới 0.\n\n### 3. Ứng Dụng\n- **Trong Giải Tích**: Các khái niệm này rất quan trọng trong việc xác định giới hạn, đạo hàm và tích phân. Chúng giúp mô tả hành vi của các hàm số trong các tình huống cực trị hoặc khi tiếp cận các giá trị không giới hạn.\n- **Trong Vật Lý**: Vô cùng lớn và vô cùng bé cũng được sử dụng để mô tả các hiện tượng vật lý, chẳng hạn như trong lý thuyết tương đối hoặc trong các mô hình lượng tử.\n\nHy vọng rằng giải thích này giúp bạn hiểu rõ hơn về khái niệm vô cùng lớn và vô cùng bé trong toán học! Nếu bạn có câu hỏi cụ thể nào khác, hãy cho tôi biết!",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [],
+      "timestamp": "2026-07-29T11:55:45"
+    }
+  ]
+}

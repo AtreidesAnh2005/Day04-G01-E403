@@ -635,6 +635,15 @@ st.markdown(
 tab_chat, tab_eval, tab_tools = st.tabs(["💬 Live Agent Chat", "📊 Run Logs & Evidence", "🛠️ Tool Declarations"])
 
 with tab_chat:
+    if version_choice in ["v1", "v2", "v3"]:
+        with st.expander(f"📚 Tài liệu tham khảo cho phiên bản {version_choice}", expanded=True):
+            if version_choice == "v1":
+                st.markdown("- [Hướng dẫn xử lý Out-of-scope & Missing Info](#)")
+            elif version_choice == "v2":
+                st.markdown("- [Bài báo về Công cụ arXiv (Paper_text)](#)")
+            elif version_choice == "v3":
+                st.markdown("- [Tài liệu Source Compare & Nâng cao](#)")
+
     if not st.session_state.messages:
         st.markdown(
             """
@@ -683,6 +692,11 @@ with tab_chat:
                             unsafe_allow_html=True,
                         )
                         st.json(tool_result, expanded=False)
+
+            # Display Raw Trace Log (Rounds) if available
+            if msg["role"] == "assistant" and msg.get("rounds"):
+                with st.expander("📄 Raw Trace Log (Rounds)", expanded=False):
+                    st.json(msg["rounds"])
 
     # Clarification Notice if waiting for user input
     if st.session_state.awaiting_clarification:
@@ -787,12 +801,18 @@ with tab_chat:
                         )
                         st.json(tool_result, expanded=False)
 
+            # Display Raw Trace Log (Rounds)
+            if rounds:
+                with st.expander("📄 Raw Trace Log (Rounds)", expanded=False):
+                    st.json(rounds)
+
         # Update Session State History
         st.session_state.messages.append({
             "role": "assistant",
             "content": assistant_text,
             "tool_events": tool_events,
             "status": status,
+            "rounds": rounds,
         })
         st.session_state.history.append({"role": "user", "content": user_input})
         st.session_state.history.append({"role": "assistant", "content": assistant_text})

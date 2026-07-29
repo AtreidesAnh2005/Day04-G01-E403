@@ -1,0 +1,28 @@
+{
+  "transcript_id": "chat_openai_20260729T113910606958",
+  "created_at": "2026-07-29T11:39:10",
+  "updated_at": "2026-07-29T11:39:10",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "version": "v2",
+  "artifact_version": "v2+pb5328af57aba+t14018d85432a",
+  "prompt_hash": "b5328af57abaf9b9497ce4be903868d9365854e46f896179e644d5e58090129d",
+  "tools_hash": "14018d85432aa63c8ad03d9f70fa95d84b9311c73e1c702de7bfd22c7058e852",
+  "turns": [
+    {
+      "user": "hello",
+      "assistant": "Hello! How can I assist you today?",
+      "status": "answered",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": "Hello! How can I assist you today?",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": []
+    }
+  ],
+  "status": "answered"
+}
