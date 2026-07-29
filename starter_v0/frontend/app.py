@@ -59,7 +59,7 @@ PASTEL_PURPLE_CSS = """
         background: linear-gradient(135deg, #ede7f6 0%, #e1d5f2 50%, #d1c4e9 100%);
         padding: 1.5rem 2rem;
         border-radius: 16px;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.2rem;
         border: 1px solid #d8b4fe;
         box-shadow: 0 4px 15px rgba(124, 77, 255, 0.08);
     }
@@ -77,6 +77,71 @@ PASTEL_PURPLE_CSS = """
         font-size: 0.95rem;
         margin-top: 0.4rem;
         font-weight: 500;
+    }
+    .hero-badge-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.8rem;
+    }
+    .info-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.3rem 0.6rem;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        background-color: rgba(255,255,255,0.7);
+        color: #6b21a8;
+        border: 1px solid #e9d5ff;
+    }
+    .empty-state-card, .section-card {
+        background: linear-gradient(135deg, #ffffff 0%, #fcfaff 100%);
+        border: 1px solid #e9d5ff;
+        border-radius: 14px;
+        padding: 1rem 1.1rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 10px rgba(139, 92, 246, 0.05);
+    }
+    .empty-state-title, .section-card-title {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #4c1d95;
+        margin-bottom: 0.35rem;
+    }
+    .empty-state-body, .section-card-body {
+        color: #6b21a8;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    .block-container {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+        max-width: 1400px;
+    }
+    .metric-card {
+        background: linear-gradient(135deg, #ffffff 0%, #fcfaff 100%);
+        border: 1px solid #e9d5ff;
+        border-radius: 12px;
+        padding: 0.8rem 0.9rem;
+        margin-bottom: 0.8rem;
+        box-shadow: 0 2px 8px rgba(139, 92, 246, 0.05);
+    }
+
+    @media (max-width: 900px) {
+        .header-container {
+            padding: 1.1rem 1rem;
+        }
+        .header-title {
+            font-size: 1.35rem;
+        }
+        .hero-badge-row {
+            display: none;
+        }
+        .section-card, .empty-state-card {
+            padding: 0.85rem 0.95rem;
+        }
     }
 
     /* Version Badges */
@@ -195,6 +260,25 @@ def init_session_state():
     if "awaiting_clarification" not in st.session_state:
         st.session_state.awaiting_clarification = False
 
+
+def metric_percent(value: Any) -> str:
+    try:
+        return f"{float(value):.1%}"
+    except (TypeError, ValueError):
+        return str(value)
+
+
+def build_run_metrics(run_content: dict[str, Any]) -> dict[str, Any]:
+    summary = run_content.get("summary", {})
+    return {
+        "case_accuracy": float(summary.get("case_accuracy", 0) or 0),
+        "tool_routing_accuracy": float(summary.get("tool_routing_accuracy", 0) or 0),
+        "argument_accuracy": float(summary.get("argument_accuracy", 0) or 0),
+        "provider_error_cases": int(summary.get("provider_error_cases", 0) or 0),
+        "failure_counts": summary.get("failure_counts", {}),
+    }
+
+
 init_session_state()
 
 # Sidebar: Controls & Artifact Info
@@ -280,7 +364,12 @@ st.markdown(
             <span>🔮 Research Agent Tool Eval Studio</span>
         </div>
         <div class="header-subtitle">
-            Evidence-Driven Agent Evaluation & Tool Execution Loop • Tone Tím Pastel
+            Evidence-Driven Agent Evaluation & Tool Execution Loop 
+        </div>
+        <div class="hero-badge-row">
+            <span class="info-pill">💬 Live agent chat</span>
+            <span class="info-pill">📊 Evidence inspection</span>
+            <span class="info-pill">🛠️ Tool declaration review</span>
         </div>
     </div>
     """,
@@ -291,6 +380,23 @@ st.markdown(
 tab_chat, tab_eval, tab_tools = st.tabs(["💬 Live Agent Chat", "📊 Run Logs & Evidence", "🛠️ Tool Declarations"])
 
 with tab_chat:
+    if not st.session_state.messages:
+        st.markdown(
+            """
+            <div class="empty-state-card">
+                <div class="empty-state-title">Start a research workflow</div>
+                <div class="empty-state-body">
+                    Ask the agent a question, then inspect the tool execution trace and saved transcript in the same session.
+                </div>
+                <div class="hero-badge-row">
+                    <span class="info-pill">Example: Find recent papers about multi-agent systems</span>
+                    <span class="info-pill">Example: Compare tool usage across two research prompts</span>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
     # Render Chat History
     for msg in st.session_state.messages:
         with st.chat_message(msg["role"], avatar="👤" if msg["role"] == "user" else "🔮"):
@@ -456,7 +562,17 @@ with tab_chat:
 # Tab 2: Run Logs & Evidence Inspector
 with tab_eval:
     st.subheader("📊 Evaluation Evidence Inspector")
-    st.markdown("Xem lại thông số từ các lần chạy eval (`runs/*.json`) và transcript (`transcripts/*.json`).")
+    st.markdown(
+        """
+        <div class="section-card">
+            <div class="section-card-title">Evidence overview</div>
+            <div class="section-card-body">
+                Review benchmark runs and chat transcripts side by side to compare performance, agent behavior, and tool traces.
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     runs_dir = ROOT / "runs"
     transcripts_dir = ROOT / "transcripts"
@@ -471,21 +587,42 @@ with tab_eval:
             if selected_run_file:
                 try:
                     run_content = json.loads(selected_run_file.read_text(encoding="utf-8"))
-                    summary = run_content.get("summary", {})
+                    run_metrics = build_run_metrics(run_content)
 
                     st.markdown(
                         f"""
                         <div class="tool-trace-card">
                             <h4 style="margin:0; color:#4c1d95;">Version: <span class="badge badge-purple">{run_content.get('artifact_version', 'N/A')}</span></h4>
-                            <hr style="margin:0.5rem 0; border-color:#e9d5ff;"/>
-                            <p><strong>Case Accuracy:</strong> <code>{summary.get('case_accuracy', 'N/A')}</code></p>
-                            <p><strong>Tool Routing Accuracy:</strong> <code>{summary.get('tool_routing_accuracy', 'N/A')}</code></p>
-                            <p><strong>Argument Accuracy:</strong> <code>{summary.get('argument_accuracy', 'N/A')}</code></p>
-                            <p><strong>Provider Errors:</strong> <code>{summary.get('provider_error_cases', 0)}</code></p>
+                            <p style="font-size:0.85rem; margin-top:0.4rem; color:#6b21a8;">{run_content.get('description', 'Benchmark summary')}</p>
                         </div>
                         """,
                         unsafe_allow_html=True,
                     )
+
+                    mcol1, mcol2, mcol3, mcol4 = st.columns(4)
+                    mcol1.metric("Case Accuracy", metric_percent(run_metrics["case_accuracy"]))
+                    mcol2.metric("Tool Routing", metric_percent(run_metrics["tool_routing_accuracy"]))
+                    mcol3.metric("Argument Accuracy", metric_percent(run_metrics["argument_accuracy"]))
+                    mcol4.metric("Provider Errors", run_metrics["provider_error_cases"])
+
+                    chart_data = {
+                        "Metric": ["Case", "Routing", "Argument"],
+                        "Score": [
+                            run_metrics["case_accuracy"],
+                            run_metrics["tool_routing_accuracy"],
+                            run_metrics["argument_accuracy"],
+                        ],
+                    }
+                    st.bar_chart(chart_data, x="Metric", y="Score")
+
+                    failure_counts = run_metrics["failure_counts"]
+                    if failure_counts:
+                        failure_items = [(k, v) for k, v in failure_counts.items() if v]
+                        if failure_items:
+                            fail_data = {"Failure Type": [k for k, _ in failure_items], "Count": [v for _, v in failure_items]}
+                            st.caption("Failure breakdown")
+                            st.bar_chart(fail_data, x="Failure Type", y="Count")
+
                     with st.expander("📄 Full Run Log JSON"):
                         st.json(run_content)
                 except Exception as e:
@@ -501,16 +638,28 @@ with tab_eval:
             if selected_tr_file:
                 try:
                     tr_content = json.loads(selected_tr_file.read_text(encoding="utf-8"))
+                    turns = tr_content.get("turns", [])
                     st.markdown(
                         f"""
                         <div class="tool-trace-card">
                             <h4 style="margin:0; color:#4c1d95;">Transcript ID: <span class="badge badge-pink">{tr_content.get('transcript_id', 'N/A')}</span></h4>
-                            <p style="font-size:0.85rem; margin-top:0.4rem;"><strong>Turns Count:</strong> {len(tr_content.get('turns', []))}</p>
+                            <p style="font-size:0.85rem; margin-top:0.4rem;"><strong>Turns Count:</strong> {len(turns)}</p>
                             <p style="font-size:0.85rem;"><strong>Artifact Version:</strong> {tr_content.get('artifact_version', 'N/A')}</p>
                         </div>
                         """,
                         unsafe_allow_html=True,
                     )
+
+                    if turns:
+                        st.caption("Recent interaction preview")
+                        for idx, turn in enumerate(turns[:3], 1):
+                            user_text = turn.get("user") or turn.get("user_text") or ""
+                            status = turn.get("status") or "unknown"
+                            st.markdown(
+                                f"<div class='metric-card'><strong>{idx}. {status}</strong><br/>{user_text}</div>",
+                                unsafe_allow_html=True,
+                            )
+
                     with st.expander("📄 Full Transcript JSON"):
                         st.json(tr_content)
                 except Exception as e:
@@ -521,7 +670,17 @@ with tab_eval:
 # Tab 3: Tool Declarations Viewer
 with tab_tools:
     st.subheader("🛠️ Active Tool Declarations")
-    st.markdown("Danh sách các Tool đã khai báo trong `artifacts/tools.yaml` tuân theo tiêu chuẩn **API-CONTRACTS.md**.")
+    st.markdown(
+        """
+        <div class="section-card">
+            <div class="section-card-title">Tool inventory</div>
+            <div class="section-card-body">
+                Browse the active tool schema and quickly inspect each declaration, its parameters, and its purpose.
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     if tools_path.exists():
         t_decls = load_tool_declarations(tools_path)
