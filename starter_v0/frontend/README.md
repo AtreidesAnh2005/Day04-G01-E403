@@ -6,9 +6,14 @@ Thư mục giao diện Web UI riêng biệt cho dự án Research Agent Tool Eva
 
 ```text
 frontend/
-├── app.py          # Ứng dụng Streamlit UI chính (Pastel Purple Theme)
+├── app.py          # Ứng dụng Streamlit UI chính (Adaptive Light & Dark Purple Theme)
+├── INTEGRATION.md  # Tài liệu Hợp đồng dữ liệu & Tích hợp Backend
 └── README.md       # Tài liệu hướng dẫn sử dụng
 ```
+
+## Tài liệu Tích hợp Backend
+Xem hướng dẫn kết nối chi tiết tại [INTEGRATION.md](INTEGRATION.md).
+
 
 ## Hướng dẫn khởi chạy
 

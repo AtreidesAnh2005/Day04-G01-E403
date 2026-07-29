@@ -199,7 +199,6 @@ init_session_state()
 
 # Sidebar: Controls & Artifact Info
 with st.sidebar:
-    st.image("https://img.icons8.com/isometric/96/purple-crystal.png", width=64)
     st.title("🔮 Agent Control Panel")
     st.caption("Pastel Edition — Research Agent Tool Eval")
 
