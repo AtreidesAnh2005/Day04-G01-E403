@@ -14,7 +14,7 @@ MIN_SENTENCE_TOKENS = 3
 # Conservative enough to avoid unrelated short sentences, permissive enough for
 # near-duplicate research summaries with small wording changes.
 AGREEMENT_THRESHOLD = 0.45
-CONFLICT_THRESHOLD = 0.45
+CONFLICT_THRESHOLD = 0.35
 NEGATION_CONFLICT_THRESHOLD = 0.4
 
 STOPWORDS = {
@@ -341,7 +341,6 @@ def compare_sources(
         result["message"] = "No valid source items were provided."
         return result
 
-    valid_seen = 0
     skipped_for_limit = 0
 
     for original_index, item in enumerate(items):
@@ -354,7 +353,6 @@ def compare_sources(
             result["warnings"].append(f"Skipped item {original_index}: missing or empty summary.")
             continue
 
-        valid_seen += 1
         if len(result["items"]) >= max_items:
             skipped_for_limit += 1
             continue
