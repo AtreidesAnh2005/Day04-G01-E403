@@ -141,11 +141,39 @@ PASTEL_PURPLE_CSS = """
         animation-delay: -7s;
     }
 
+    /* Prevent Top Streamlit Header Bar from covering the first block */
+    .main .block-container, [data-testid="stMain"] .block-container, .block-container {
+        padding-top: 4.5rem !important;
+        padding-bottom: 2rem !important;
+        max-width: 1400px;
+        animation: page-enter .42s var(--ease-spring) both;
+    }
+
+    [data-testid="stHeader"] {
+        background-color: rgba(250, 247, 253, 0.94) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        border-bottom: 1px solid rgba(216, 180, 254, 0.4) !important;
+        z-index: 999 !important;
+    }
+    [data-testid="stHeader"] * {
+        color: #4a148c !important;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        [data-testid="stHeader"] {
+            background-color: rgba(15, 8, 29, 0.94) !important;
+            border-bottom: 1px solid rgba(91, 33, 182, 0.5) !important;
+        }
+        [data-testid="stHeader"] * {
+            color: #f3e8ff !important;
+        }
+    }
+
     /* Header Styling */
     [data-testid="stElementContainer"]:has(> .stMarkdown .header-container) {
-        position: sticky;
-        top: .65rem;
-        z-index: 1000;
+        position: relative;
+        z-index: 100;
         isolation: isolate;
     }
     .header-container {
@@ -155,6 +183,7 @@ PASTEL_PURPLE_CSS = """
         background-size: 220% 220%, 240% 240%;
         padding: 1.5rem 2rem;
         border-radius: 16px;
+        margin-top: 0.5rem;
         margin-bottom: 1.2rem;
         border: 1px solid #d8b4fe;
         box-shadow: 0 14px 38px rgba(76, 29, 149, .10), inset 0 1px 0 rgba(255,255,255,.72);
@@ -262,12 +291,6 @@ PASTEL_PURPLE_CSS = """
         color: #6b21a8;
         font-size: 0.95rem;
         line-height: 1.5;
-    }
-    .block-container {
-        padding-top: 1rem;
-        padding-bottom: 2rem;
-        max-width: 1400px;
-        animation: page-enter .42s var(--ease-spring) both;
     }
     .metric-card {
         background: linear-gradient(135deg, #ffffff 0%, #fcfaff 100%);
