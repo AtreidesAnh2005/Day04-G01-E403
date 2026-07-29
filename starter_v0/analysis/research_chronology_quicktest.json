@@ -1,0 +1,144 @@
+{
+  "tool_name": "research_chronology",
+  "test_type": "local_registry_quicktest",
+  "input_summary": {
+    "item_count": 6,
+    "sort_order": "ascending",
+    "group_by": "year",
+    "max_items": 20
+  },
+  "result": {
+    "events": [
+      {
+        "title": "Project proposal",
+        "summary": "The project proposal was published in 2024.",
+        "url": "",
+        "source": "Research Lab",
+        "original_index": 0,
+        "date": "2024",
+        "date_precision": "year",
+        "raw_date": "2024",
+        "date_source": "summary"
+      },
+      {
+        "title": "Pilot announced",
+        "summary": "The pilot was announced on March 2, 2025.",
+        "url": "",
+        "source": "Company Blog",
+        "original_index": 1,
+        "date": "2025-03-02",
+        "date_precision": "day",
+        "raw_date": "March 2, 2025",
+        "date_source": "summary"
+      },
+      {
+        "title": "Public launch",
+        "summary": "The product became publicly available.",
+        "url": "",
+        "source": "Official Newsroom",
+        "original_index": 2,
+        "date": "2026-06-15",
+        "date_precision": "day",
+        "raw_date": "2026-06-15T09:30:00Z",
+        "date_source": "published_at"
+      },
+      {
+        "title": "Vietnam deployment",
+        "summary": "Hệ thống được triển khai ngày 20 tháng 7 năm 2026.",
+        "url": "",
+        "source": "Local Report",
+        "original_index": 3,
+        "date": "2026-07-20",
+        "date_precision": "day",
+        "raw_date": "ngày 20 tháng 7 năm 2026",
+        "date_source": "summary"
+      }
+    ],
+    "undated_items": [
+      {
+        "title": "Undated update",
+        "summary": "The team shared another technical update.",
+        "url": "",
+        "source": "",
+        "original_index": 4,
+        "reason": "No supported date was found."
+      }
+    ],
+    "invalid_date_items": [
+      {
+        "title": "Invalid metadata",
+        "summary": "The metadata contains an invalid date.",
+        "url": "",
+        "source": "",
+        "original_index": 5,
+        "raw_date": "2026-02-30",
+        "date_source": "published_at",
+        "reason": "Invalid calendar date."
+      }
+    ],
+    "groups": [
+      {
+        "key": "2024",
+        "events": [
+          {
+            "title": "Project proposal",
+            "summary": "The project proposal was published in 2024.",
+            "url": "",
+            "source": "Research Lab",
+            "original_index": 0,
+            "date": "2024",
+            "date_precision": "year",
+            "raw_date": "2024",
+            "date_source": "summary"
+          }
+        ]
+      },
+      {
+        "key": "2025",
+        "events": [
+          {
+            "title": "Pilot announced",
+            "summary": "The pilot was announced on March 2, 2025.",
+            "url": "",
+            "source": "Company Blog",
+            "original_index": 1,
+            "date": "2025-03-02",
+            "date_precision": "day",
+            "raw_date": "March 2, 2025",
+            "date_source": "summary"
+          }
+        ]
+      },
+      {
+        "key": "2026",
+        "events": [
+          {
+            "title": "Public launch",
+            "summary": "The product became publicly available.",
+            "url": "",
+            "source": "Official Newsroom",
+            "original_index": 2,
+            "date": "2026-06-15",
+            "date_precision": "day",
+            "raw_date": "2026-06-15T09:30:00Z",
+            "date_source": "published_at"
+          },
+          {
+            "title": "Vietnam deployment",
+            "summary": "Hệ thống được triển khai ngày 20 tháng 7 năm 2026.",
+            "url": "",
+            "source": "Local Report",
+            "original_index": 3,
+            "date": "2026-07-20",
+            "date_precision": "day",
+            "raw_date": "ngày 20 tháng 7 năm 2026",
+            "date_source": "summary"
+          }
+        ]
+      }
+    ],
+    "warnings": [],
+    "error": null,
+    "message": "Built chronology with 4 dated events, 1 undated item, and 1 invalid-date item."
+  }
+}
